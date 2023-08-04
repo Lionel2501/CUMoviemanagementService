@@ -1,0 +1,12 @@
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\bin\Debug\net7.0\MovieManagement.Domain.deps.json
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\bin\Debug\net7.0\MovieManagement.Domain.dll
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\bin\Debug\net7.0\MovieManagement.Domain.pdb
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.AssemblyInfo.cs
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.dll
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\refint\MovieManagement.Domain.dll
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\MovieManagement.Domain.pdb
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagement.Domain\obj\Debug\net7.0\ref\MovieManagement.Domain.dll
