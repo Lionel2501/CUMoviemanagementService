@@ -1,6 +1,6 @@
 ﻿using MovieManagement.Domain.Entities;
 
-namespace MovieManagement.API.DTO
+namespace MovieManagement.API.Services.DTO.Model
 {
     public class ActorResponse
     {
@@ -8,10 +8,9 @@ namespace MovieManagement.API.DTO
 
         public string LastName { get; set; } = string.Empty;
 
-        //public string Movies { get; set; }
+        public List<string> Movies { get; set; }
 
-        public List<string>? Movies { get; set; }
+        public string Biography { get; set; }
 
-        //public Biography? Biography { get; set; }
     }
 }

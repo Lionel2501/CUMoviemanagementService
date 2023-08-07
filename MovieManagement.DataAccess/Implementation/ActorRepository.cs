@@ -19,7 +19,10 @@ namespace MovieManagement.DataAccess.Implementation
 
         public IEnumerable<Actor> GetActorsWithMovies()
         {
-            var actorsWithMovies = _context.Actors.Include(u => u.Movies).ToList();
+            var actorsWithMovies = _context.Actors
+                    .Include(u => u.Movies)
+                    .Include(u => u.Biography)
+                    .ToList();
             return actorsWithMovies;
         }
 

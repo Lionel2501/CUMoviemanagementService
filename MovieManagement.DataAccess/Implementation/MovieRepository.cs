@@ -1,4 +1,5 @@
-﻿using MovieManagement.DataAccess.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieManagement.DataAccess.Context;
 using MovieManagement.Domain.Entities;
 using MovieManagement.Domain.Repository;
 using System;

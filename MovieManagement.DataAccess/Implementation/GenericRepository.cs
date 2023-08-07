@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace MovieManagement.DataAccess.Implementation
 {
+
     public class GenericRepository<T> : IGenericRepository<T> where T  : class
     {
         public readonly MovieManagementDbContext _context;
@@ -22,6 +23,7 @@ namespace MovieManagement.DataAccess.Implementation
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            _context.SaveChanges();
         }
 
         public void AddRange(IEnumerable<T> entities)
