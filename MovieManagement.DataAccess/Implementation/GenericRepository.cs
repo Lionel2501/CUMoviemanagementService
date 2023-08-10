@@ -49,6 +49,7 @@ namespace MovieManagement.DataAccess.Implementation
         public void Remove(T entity)
         {
             _context.Set<T>().Remove(entity);
+            _context.SaveChanges();
         }
 
         public void RemoveRange(IEnumerable<T> entities)

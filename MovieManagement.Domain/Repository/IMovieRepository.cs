@@ -9,6 +9,6 @@ namespace MovieManagement.Domain.Repository
 {
     public interface IMovieRepository : IGenericRepository<Movie>
     {
-        //Task<Movie> Add(Movie movie);
+        //bool RemoveMovie(int id);
     }
 }

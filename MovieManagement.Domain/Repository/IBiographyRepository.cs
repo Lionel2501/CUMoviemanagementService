@@ -9,5 +9,6 @@ namespace MovieManagement.Domain.Repository
 {
     public interface IBiographyRepository : IGenericRepository<Biography>
     {
+        bool UpdateBiography(Biography biography);
     }
 }

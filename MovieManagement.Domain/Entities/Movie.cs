@@ -16,8 +16,8 @@ namespace MovieManagement.Domain.Entities
 
         public int ActorId { get; set; }  
 
-        public Actor? Actor { get; set; }
+        //public Actor? Actor { get; set; }
 
-        public List<Genre>? Genre { get; set; }    
+        //public List<Genre>? Genre { get; set; }    
     }
 }

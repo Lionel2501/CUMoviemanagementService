@@ -26,9 +26,9 @@ namespace MovieManagement.DataAccess.Implementation
             return actorsWithMovies;
         }
 
-        public IEnumerable<Actor> GetActorsWithBiographies()
+        public IQueryable<Actor> GetActorsLinq()
         {
-            var actorsWithBiographies = _context.Actors.Include(u => u.Biography).ToList();
+            var actorsWithBiographies = _context.Actors.Include(u => u.Movies);
 
             return actorsWithBiographies;
         }

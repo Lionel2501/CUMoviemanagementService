@@ -29,5 +29,20 @@ namespace MovieManagement.API.Controllers
 
             return Ok(true);
         }
+
+        [HttpPost("UpdateBiography")]
+        public ActionResult UpdateBiography([FromBody] Biography _biography)
+        {
+            try
+            {
+                _unitOfWork.Biography.UpdateBiography(_biography);
+
+                return Ok(true);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

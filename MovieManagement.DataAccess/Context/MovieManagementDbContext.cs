@@ -14,18 +14,16 @@ namespace MovieManagement.DataAccess.Context
 
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Movie> Movies { get; set; }
-
         public DbSet<Biography> Biography { get; set; } 
         public DbSet<Genre> Genres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Actor>().HasData(
+           modelBuilder.Entity<Actor>().HasData(
                 new Actor { Id = 1, FirstName = "Chuck", LastName = "Norris" }, 
                 new Actor { Id = 2, FirstName = "Jane", LastName = "Doe"},
                 new Actor { Id = 3, FirstName = "Van", LastName = "Damme" }
             );
-
         }
     }
 }

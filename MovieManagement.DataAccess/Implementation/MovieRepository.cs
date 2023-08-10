@@ -16,5 +16,18 @@ namespace MovieManagement.DataAccess.Implementation
         {
              
         }
+
+        /*
+        public bool RemoveMovie(int id)
+        {
+            var movie = _context.Movies.FirstOrDefault(x => x.Id == id);
+            if(movie != null) { 
+                _context.Movies.Remove(movie);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        */
     }
 }

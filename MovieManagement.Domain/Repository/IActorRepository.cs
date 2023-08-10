@@ -11,6 +11,6 @@ namespace MovieManagement.Domain.Repository
     {
         IEnumerable<Actor> GetActorsWithMovies();
 
-        IEnumerable<Actor> GetActorsWithBiographies();
+        IQueryable<Actor> GetActorsLinq();
     }
 }

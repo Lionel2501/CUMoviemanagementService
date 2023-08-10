@@ -28,16 +28,30 @@ namespace MovieManagement.API.Controllers
         }
 
         [HttpPost(Name = "SaveMovie")]
-        public ActionResult SaveMovie([FromBody] IEnumerable<Movie> _movie)
+        public ActionResult SaveMovie([FromBody] Movie _movie)
         {
             try
             {
-                _unitOfWork.Movie.AddRange(_movie);
+                _unitOfWork.Movie.Add(_movie);
                 return Ok(true);
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        [HttpPost("DeleteMovie")]
+        public ActionResult DeleteMovie([FromBody] Movie _movie)
+        {
+            try
+            {
+                //_unitOfWork.Movie.RemoveMovie(id);
+                _unitOfWork.Movie.Remove(_movie);
+                return Ok(true);
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

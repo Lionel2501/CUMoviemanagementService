@@ -1,4 +1,5 @@
-﻿using MovieManagement.DataAccess.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieManagement.DataAccess.Context;
 using MovieManagement.Domain.Entities;
 using MovieManagement.Domain.Repository;
 using System;
@@ -15,5 +16,23 @@ namespace MovieManagement.DataAccess.Implementation
         {
             
         }
+        public bool UpdateBiography(Biography biography)
+        {
+            int id = biography.Id;
+            var _biography = _context.Biography.FirstOrDefault(x => x.Id == id);
+
+            if (_biography != null)
+            {
+                _biography.ActorId = biography.ActorId;
+                _biography.Description = biography.Description;
+
+                _context.SaveChanges();
+                return true;
+            } else            
+            {
+                return false;
+            }   
+        }
+
     }
 }

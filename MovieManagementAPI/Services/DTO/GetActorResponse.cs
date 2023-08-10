@@ -35,5 +35,23 @@ namespace MovieManagement.API.Services.DTO
             }
             return result;
         }
+
+        public IQueryable<ActorResponse> ActorResponseLinq(IQueryable<Actor> actorsResponse)
+        {
+            IQueryable<ActorResponse> result = from actor in actorsResponse
+                                               where actor.Movies.Count() > 0
+                                               select new ActorResponse()
+                                               {
+                                                   FirstName = actor.FirstName,
+                                                   LastName = actor.LastName,
+                                                   //Movies = actor.Movies.Select(m => m.Name).ToList()
+                                                   Movies = (List<string>)(
+                                                              from m
+                                                              in actor.Movies
+                                                              select m.Name)
+                                               };
+            
+            return result;
+        }
     }
 }
