@@ -17,7 +17,7 @@ namespace MovieManagement.DataAccess.Implementation
 
         }
 
-        public IEnumerable<Actor> GetActorsWithMovies()
+        public IEnumerable<Actor> GetActorsDBRelation()
         {
             var actorsWithMovies = _context.Actors
                     .Include(u => u.Movies)
@@ -29,6 +29,13 @@ namespace MovieManagement.DataAccess.Implementation
         public IQueryable<Actor> GetActorsLinq()
         {
             var actorsWithBiographies = _context.Actors.Include(u => u.Movies);
+
+            return actorsWithBiographies;
+        }
+
+        public List<Actor> GetWithAutoMapper()
+        {
+            var actorsWithBiographies = _context.Actors.Include(u => u.Movies).ToList();
 
             return actorsWithBiographies;
         }

@@ -9,8 +9,10 @@ namespace MovieManagement.Domain.Repository
 {
     public interface IActorRepository : IGenericRepository<Actor>
     {
-        IEnumerable<Actor> GetActorsWithMovies();
+        IEnumerable<Actor> GetActorsDBRelation();
 
         IQueryable<Actor> GetActorsLinq();
+
+        List<Actor> GetWithAutoMapper();
     }
 }

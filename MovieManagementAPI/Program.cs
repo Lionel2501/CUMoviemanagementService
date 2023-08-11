@@ -1,8 +1,10 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.DataAccess.Context;
 using MovieManagement.DataAccess.Implementation;
 using MovieManagement.Domain.Repository;
 using System.Text.Json.Serialization;
+using MovieManagement.API.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MovieManagementDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MovieConnection")));
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+var automapper = new MapperConfiguration(item => item.AddProfile(new AutoMapperHandler()));
+IMapper mapper = automapper.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 builder.Services.AddMvc().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 

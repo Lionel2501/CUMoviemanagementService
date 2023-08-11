@@ -6,6 +6,7 @@ using MovieManagement.Domain.Entities;
 using MovieManagement.Domain.Repository;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 
 namespace MovieManagement.API.Controllers
 {
@@ -14,10 +15,12 @@ namespace MovieManagement.API.Controllers
     public class ActorsController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public ActorsController(IUnitOfWork unitOfWork)
+        public ActorsController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         [HttpGet(Name = "Get")]
@@ -28,9 +31,9 @@ namespace MovieManagement.API.Controllers
         }
 
         [HttpGet("dto")]
-        public ActionResult GetWithMovies()
+        public ActionResult GetActorsDBRelation()
         {
-            var actorsWithMovies = _unitOfWork.Actor.GetActorsWithMovies();
+            var actorsWithMovies = _unitOfWork.Actor.GetActorsDBRelation();
 
             GetActorResponse actorResponse = new GetActorResponse();
             var result = actorResponse.ActorResponse(actorsWithMovies.ToList());
@@ -48,22 +51,17 @@ namespace MovieManagement.API.Controllers
 
             var result = actorResponseModel.ActorResponseLinq(actorsResponse);
 
+            return Ok(result);
+        }
 
-            /*
-            IQueryable<ActorResponse> result = from actor
-                         in actorsResponse
-                         where actor.Movies.Count() > 0
-                         select new ActorResponse()
-                         {
-                             FirstName = actor.FirstName,
-                             LastName = actor.LastName,
-                             //Movies = actor.Movies.Select(m => m.Name).ToList()
-                             Movies = (List<string>)(
-                                        from m 
-                                        in actor.Movies
-                                        select m.Name)
-                         };
-            */
+        [HttpGet("automapper")]
+        public ActionResult GetWithAutoMapper()
+        {
+            List<Actor> actorsResponse = _unitOfWork.Actor.GetWithAutoMapper();
+
+            GetActorName actorNameModel = new GetActorName(_mapper);
+
+            List<ActorName> result = actorNameModel.GetWithAutoMapper(actorsResponse);
 
             return Ok(result);
         }

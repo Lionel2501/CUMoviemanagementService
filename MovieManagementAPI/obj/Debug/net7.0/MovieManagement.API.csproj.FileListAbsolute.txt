@@ -77,3 +77,5 @@ C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\obj\Deb
 C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\obj\Debug\net7.0\MovieManagement.API.pdb
 C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\obj\Debug\net7.0\MovieManagement.API.genruntimeconfig.cache
 C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\obj\Debug\net7.0\ref\MovieManagement.API.dll
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\lionel\source\repos\CUMoviemanagementService\MovieManagementAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -5,6 +5,9 @@ namespace MovieManagement.API.Services.DTO
 {
     public class GetActorResponse
     {
+        public GetActorResponse()
+        {
+        }
         public List<ActorResponse> ActorResponse(List<Actor> actorsWithMovies)
         {
             List<ActorResponse> result = new List<ActorResponse>();
